@@ -1,11 +1,39 @@
 <html>
 
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGACORD</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
 </head>
 
 <body>
-
+    <script src="./js/script.js"></script>
+    <a href="./index.html"><img src="./images/mc_transparent.gif" alt="MEGACORD Logo" width="25%" height="25%"
+            style="width:auto;" class="center"></a>
+    <div class="container" id="nav">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a onclick="vote()" href="javascript:void(0);">Vote</a></li>
+            <li><a href="https://github.com/NicPWNs/MEGABOT">GitHub</a></li>
+        </ul>
+    </div>
+    <div id="vote" style="display: none;">
+        <ul>
+            <li>
+                <input type="text" placeholder="Discord Username" id="discord">
+            </li>
+            <li><a onclick="sendVote()" href="javascript:void(0);" id="submit">Vote</a></li>
+            <br>
+            <li>
+                <input readonly type="text" value="Error" class="error" id="error" style="display: none;">
+            </li>
+        </ul>
+    </div>
 </body>
 
 </html>

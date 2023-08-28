@@ -1,0 +1,54 @@
+body {
+  background-color: #202225;
+  font-size: 25px;
+  font-family: Courier New, "Courier", Lucida Sans Typewriter, Lucida Typewriter,
+    sans-serif;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+}
+a {
+  color: white;
+  text-decoration: none;
+  text-shadow: -0.06em 0 red, 0.06em 0 cyan;
+  letter-spacing: 0.08em;
+}
+a:hover {
+  text-shadow: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+}
+li {
+  display: inline;
+  float: left;
+  padding: 25px;
+}
+div {
+  text-align: center;
+}
+input {
+  display: block;
+  width: 250px;
+  margin: 0 0 20px;
+  padding: 8px 12px 10px 12px;
+  border: 1px solid #292b2f;
+  background: #2f3136;
+  font-family: inherit;
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+input.error {
+  background: #ed4245;
+  border-radius: 5px;
+  font-weight: bold;
+}

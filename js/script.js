@@ -9,9 +9,9 @@ function vote() {
   var error = document.getElementById("error");
   var discord = document.getElementById("discord");
   discord.value = "";
-  var ref = document.referrer;
-
-  if (ref.match("/^https?://([^/]+.)?adfoc.us(/|$)/i")) {
+  var referrer = document.referrer;
+  console.log(referrer);
+  if (referrer.match("https://adfoc.us/")) {
     nav.style.display = "none";
     vote.style.display = "block";
   } else {
@@ -20,6 +20,9 @@ function vote() {
     submit.style.display = "none";
     error.style.display = "block";
     error.value = "Use /vote in the MEGACORD";
+    console.error(
+      "Traffic needs to originate from using the /vote command in the MEGACORD."
+    );
   }
 }
 

@@ -12,7 +12,7 @@ jobs:
       - name: Deploy
         uses: reggionick/s3-deploy@master
         with:
-          folder: $GITHUB_WORKSPACE
+          folder: .
           bucket: ${{ secrets.S3_BUCKET }}
           bucket-region: us-east-1
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}

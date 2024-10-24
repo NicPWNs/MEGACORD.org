@@ -52,3 +52,6 @@ input.error {
   border-radius: 5px;
   font-weight: bold;
 }
+.hide {
+  display: none;
+}

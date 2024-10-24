@@ -20,11 +20,41 @@
 </div>
 <br>
 <br>
-<div>
-    <iframe src="https://player.twitch.tv/?channel=thesaturatedsquid&parent=megacord.org&muted=false" height="360"
-        width="640" allowfullscreen frameBorder="0">
-    </iframe>
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+<div id="twitch" class="hide">
 </div>
+
+<script type="text/javascript">
+    var options = {
+        channel: "thesaturatedsquid",
+        width: 640,
+        height: 360,
+    };
+    var player = new Twitch.Player("twitch", options);
+
+    player.addEventListener(Twitch.Player.READY, initiate)
+
+    function initiate() {
+        player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+        player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+        player.removeEventListener(Twitch.Player.READY, initiate);
+    }
+
+    function handleOnline() {
+        document.getElementById("twitch").classList.remove('hide');
+        player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+        player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+        player.setMuted(false);
+    }
+
+    function handleOffline() {
+        document.getElementById("twitch").classList.add('hide');
+        player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+        player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+        player.setMuted(true);
+    }
+</script>
 </body>
 
 </html>

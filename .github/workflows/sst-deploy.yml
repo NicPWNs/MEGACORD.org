@@ -27,5 +27,6 @@ jobs:
           CLOUDFLARE_DEFAULT_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_DEFAULT_ACCOUNT_ID }}
         run: |
           npm i --legacy-peer-deps
-          npx sst@latest refresh --stage production
+          # Fails with "Stage not found" until the first deploy creates state.
+          npx sst@latest refresh --stage production || echo "no state to refresh yet"
           npx sst@latest deploy --stage production
